@@ -3,7 +3,7 @@ import cv2
 from threading import Thread
 capture_target=0
 
-
+import time
 import socketio
 import time
 from batman import iAmBatman, GUI
@@ -14,14 +14,13 @@ from threading import Thread
 #worker thread for heart rate
 def thread_work(videostream, jwt, values):
     #print("start analysis:")
-    iAmBatman(videostream, jwt, values)
+    iAmBatman(videostream, jwt, values, sio)
 
 # standard Python
 sio = socketio.Client()
 
 @sio.event
 def connect():
-    print("connected")
     pass
 
 
@@ -48,28 +47,52 @@ def call(data):
         height = (data['user']['height'])
         sex = (data['user']['sex'])
         values = { 'sex' : sex , 'height' : height, 'weight' : weight, 'age' : age}
-        sio.disconnect()
+        print(jwt)
+        # sio.disconnect()
+
     else:
         print("Incorrect Credentials")
         sio.disconnect()
 
-
-
+try:
+    sio.disconnect()
+except:
+    pass
+print("connected")
 while(flag):
     sio.connect('http://deloitte-hack.herokuapp.com/')
     email = str(input("Email:"))
     password = str(input("Password:"))
     sio.emit('user.login', data={"email":str(email), "password":str(password)}, callback=call)
-    sio.wait()
+    sio.sleep(3)
 
-
+#print("THROUGH")
 cap1 = cv2.VideoCapture(capture_target)
-worker = Thread(target=startMeUp, args=(cap1, jwt, ))
-worker.setDaemon(True)
-worker.start()
+worker1 = Thread(target=startMeUp, args=(cap1, jwt, sio))
+worker1.setDaemon(True)
+worker1.start()
 
-worker = Thread(target=thread_work, args=(cap1, jwt, values, ))
-worker.setDaemon(True)
-worker.start()
+worker2 = Thread(target=thread_work, args=(cap1, jwt, values,))
+worker2.setDaemon(True)
+worker2.start()
 
-worker.join()
+worker1.join()
+worker2.join()
+
+# while(1):
+#     # if((not(worker1.is_alive()))):
+#     #     print("--------- Respiratory detector could not find Region of interest ---------")
+#     #     print("--------------- Readjust the Camera to include you CHEST AREA ------------")
+#     #     print("------------Restarting Respiratory detector --------------")
+#     #     worker1 = Thread(target=startMeUp, args=(cap1, jwt, ))
+#     #     worker1.setDaemon(True)
+#     #     worker1.start()
+#     #     time.sleep(3)
+#
+#     if((not(worker2.is_alive()))):
+#         print("--------- Heart Rate detector could not find Region of interest ---------")
+#         print("--------------- Readjust the Camera to include you FACE clearly ------------")
+#         print("------------Restarting Heart Rate detector --------------")
+#         worker2 = Thread(target=thread_work, args=(cap1, jwt, values,))
+#         worker2.setDaemon(True)
+#         worker2.start()

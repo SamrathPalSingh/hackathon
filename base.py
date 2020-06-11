@@ -21,6 +21,7 @@ sched = BackgroundScheduler()
 
 def myfunc():
     global arr_me
+    global jwt_me
     global maximum_me
     global minimum_me
     global average_me
@@ -48,7 +49,7 @@ def myfunc():
 
 
 class RespiratoryMonitor:
-    def __init__(self, cap, sio, jwt, capture_target=0, visualize='pyqtgraph', fig_size=None,
+    def __init__(self, cap, jwt, capture_target=0, visualize='pyqtgraph', fig_size=None,
                  fps_limit=10, error_reset_delay=10.0, save_all_data=True,
                  motion_extraction_method='average'):
         assert isinstance(fps_limit, (int, float)) and fps_limit > 0, "fps_limit must be a positive int or float"
@@ -62,7 +63,7 @@ class RespiratoryMonitor:
         assert isinstance(save_all_data, bool), "save_all_data should be bool"
         assert motion_extraction_method == "average" or motion_extraction_method == "flow", \
             "motion_extraction_method must be 'average' or 'flow'"
-
+        global sio
         #self.benchmarker = Benchmarker()
         self.sio = sio
         self.error_reset_delay = error_reset_delay
@@ -191,7 +192,7 @@ class RespiratoryMonitor:
         # Begin progress bar for calibration
         self.calibration_progress_bar = tqdm(total=self.calibration_buffer_target_length)
 
-        self.run()
+        #self.run()
 
     def skip_calibration(self, x, y, w, h):
         self.x = x
@@ -325,6 +326,7 @@ class RespiratoryMonitor:
                     #self.ui["frequency_plot"].setData(np.array(self.t)[-len(self.freq):], self.freq)
                     #self.ui["bpm_text"].setText('{0:#.4} BPM'.format(self.freq[-1]))
                     print('{0:#.4}'.format(self.freq[-1]))
+
                     self.sio.emit('breath.ping', data={"jwt": str(self.jwt), "value": str('{0:#.4}'.format(self.freq[-1])) })
                     arr_me.append(round(float('{0:#.4}'.format(self.freq[-1])), 3))
             elif self.state == "error":
@@ -452,98 +454,103 @@ class RespiratoryMonitor:
         #self.benchmarker.add_tag('Calibration Measurement')
         global arr_me
         arr_me = []
-        while self.cap.isOpened():
-            self.loop_start_time = time.time()
+        try:
+            while self.cap.isOpened():
+                self.loop_start_time = time.time()
 
-            #self.benchmarker.tick_start('Frame Capture')
-            # Capture the frame (quit if the frame is a bool, meaning end of stream)
-            self.current_frame = self.next_frame()
-            if isinstance(self.current_frame, bool):
-                break
-            #self.benchmarker.tick_end('Frame Capture')
+                #self.benchmarker.tick_start('Frame Capture')
+                # Capture the frame (quit if the frame is a bool, meaning end of stream)
+                self.current_frame = self.next_frame()
+                if isinstance(self.current_frame, bool):
+                    break
+                #self.benchmarker.tick_end('Frame Capture')
 
-            if self.state == 'initialize':
-                self.initialize()
-                self.state = 'calibration'
-            # Calibration phase
-            elif self.state == 'calibration':
-                # The beginning of the calibration phase is just acquiring enough images to calibrate
-                if self.calibration_buffer_idx < self.calibration_buffer_target_length:
-                    # Fill frame buffer
-                    self.calibration_buffer[self.calibration_buffer_idx][:] = self.current_frame
-                    self.calibration_buffer_idx += 1
-                    # Update the progress bar
-                    self.calibration_progress_bar.update(1)
-                # Once enough images have been acquired, the locate function is run to find the ROI
-                else:
-                    logging.info("Finished capturing calibration frames. Beginning calibration...")
-                    # Detect the FPS if needed
-                    self.detect_fps()
-                    # Fill FPS dependent variables
-                    self.peak_minimum_sample_distance = int(np.floor(self.fps / self.freq_max))
-                    #self.benchmarker.tick_start('Calibration Measurement')
-                    # Run the localizer
-                    location = self.locate(self.calibration_buffer, self.fps,
-                                           freq_min=self.freq_min, freq_max=self.freq_max,
-                                           temporal_threshold=self.temporal_threshold,
-                                           threshold=int(np.round(self.threshold*255)))
-                    #self.benchmarker.tick_end('Calibration Measurement')
-                    # If the localizer fails, try again
-                    if location is None:
-                        logging.info("Failed finding ROI during calibration. Retrying...")
-                        self.calibration_buffer_idx = 0
-                        continue
-                    # If the localizer didn't fail, save the values and reduce the bounding box as requested
-                    self.x, self.y, self.w, self.h = location
-                    self.x, self.y, self.w, self.h = reduce_bounding_box(self.x, self.y, self.w, self.h,
-                                                                         self.maximum_bounding_box_area)
-                    logging.info("Finished calibration.")
-                    logging.info("Beginning measuring...")
-                    self.calibration_progress_bar.close()
-
-                    self.state = 'measure'
-            elif self.state == 'measure':
-                if self.save_all_data and self.video_out is None:
-                    self.video_out = cv2.VideoWriter(str(self.capture_target) + '.avi',
-                                                     cv2.VideoWriter_fourcc(*'MSVC'),
-                                                     self.fps, (self.w, self.h))
-                #self.benchmarker.tick_start('Measurement Loop')
-                # Crop to the bounding box
-                self.cropped_image = self.current_frame[self.y: self.y + self.h, self.x: self.x + self.w]
-                # Check for full buffer and popleft
-                for b in self.buffers:
-                    if len(b) >= self.measure_buffer_length:
-                        b.popleft()
-
-                current_motion_value = self.extract_motion()
-                self.data.append(current_motion_value)
-
-                # Append to the temporal domain
-                if len(self.t) == 0:
-                    self.t.append(0.)
-                else:
-                    self.t.append(self.t[-1] + (1. / self.fps))
-                # If the raw data is to be saved, add it to the dedicated list
-                if self.save_all_data:
-                    self.video_out.write(float_to_uint8(self.cropped_image))
-                    self.all_data.append((self.t[-1], current_motion_value))
-                if len(self.data) > self.measure_initialization_length:
-                    # Perform the measurement
-                    self.measure()
-                    # Look for errors
-                    if not self.disable_error_detection and self.detect_errors():
-                        self.trigger_error("error detection found poor signal")
-                #self.benchmarker.tick_end('Measurement Loop')
-            elif self.state == 'error':
-                if time.time() - self.reset_start_time >= self.error_reset_delay:
-                    #logging.info('Benchmark Report...\r\n' + self.benchmarker.get_report())
-                    self.reset()
+                if self.state == 'initialize':
+                    self.initialize()
                     self.state = 'calibration'
+                # Calibration phase
+                elif self.state == 'calibration':
+                    # The beginning of the calibration phase is just acquiring enough images to calibrate
+                    if self.calibration_buffer_idx < self.calibration_buffer_target_length:
+                        # Fill frame buffer
+                        self.calibration_buffer[self.calibration_buffer_idx][:] = self.current_frame
+                        self.calibration_buffer_idx += 1
+                        # Update the progress bar
+                        self.calibration_progress_bar.update(1)
+                    # Once enough images have been acquired, the locate function is run to find the ROI
+                    else:
+                        logging.info("Finished capturing calibration frames. Beginning calibration...")
+                        # Detect the FPS if needed
+                        self.detect_fps()
+                        # Fill FPS dependent variables
+                        self.peak_minimum_sample_distance = int(np.floor(self.fps / self.freq_max))
+                        #self.benchmarker.tick_start('Calibration Measurement')
+                        # Run the localizer
+                        location = self.locate(self.calibration_buffer, self.fps,
+                                               freq_min=self.freq_min, freq_max=self.freq_max,
+                                               temporal_threshold=self.temporal_threshold,
+                                               threshold=int(np.round(self.threshold*255)))
+                        #self.benchmarker.tick_end('Calibration Measurement')
+                        # If the localizer fails, try again
+                        if location is None:
+                            logging.info("Failed finding ROI during calibration. Retrying...")
+                            self.calibration_buffer_idx = 0
+                            continue
+                        # If the localizer didn't fail, save the values and reduce the bounding box as requested
+                        self.x, self.y, self.w, self.h = location
+                        self.x, self.y, self.w, self.h = reduce_bounding_box(self.x, self.y, self.w, self.h,
+                                                                             self.maximum_bounding_box_area)
+                        logging.info("Finished calibration.")
+                        logging.info("Beginning measuring...")
+                        self.calibration_progress_bar.close()
 
-            # Update the UI once the internal state has been set (will do nothing if visualize is None)
-            self.update_ui()
-            # Sleep the loop as needed to sync to the desired FPS
-            self.sync_to_fps()
+                        self.state = 'measure'
+                elif self.state == 'measure':
+                    if self.save_all_data and self.video_out is None:
+                        self.video_out = cv2.VideoWriter(str(self.capture_target) + '.avi',
+                                                         cv2.VideoWriter_fourcc(*'MSVC'),
+                                                         self.fps, (self.w, self.h))
+                    #self.benchmarker.tick_start('Measurement Loop')
+                    # Crop to the bounding box
+                    self.cropped_image = self.current_frame[self.y: self.y + self.h, self.x: self.x + self.w]
+                    # Check for full buffer and popleft
+                    for b in self.buffers:
+                        if len(b) >= self.measure_buffer_length:
+                            b.popleft()
+
+                    current_motion_value = self.extract_motion()
+                    self.data.append(current_motion_value)
+
+                    # Append to the temporal domain
+                    if len(self.t) == 0:
+                        self.t.append(0.)
+                    else:
+                        self.t.append(self.t[-1] + (1. / self.fps))
+                    # If the raw data is to be saved, add it to the dedicated list
+                    if self.save_all_data:
+                        self.video_out.write(float_to_uint8(self.cropped_image))
+                        self.all_data.append((self.t[-1], current_motion_value))
+                    if len(self.data) > self.measure_initialization_length:
+                        # Perform the measurement
+                        self.measure()
+                        # Look for errors
+                        if not self.disable_error_detection and self.detect_errors():
+                            self.trigger_error("error detection found poor signal")
+                    #self.benchmarker.tick_end('Measurement Loop')
+                elif self.state == 'error':
+                    if time.time() - self.reset_start_time >= self.error_reset_delay:
+                        #logging.info('Benchmark Report...\r\n' + self.benchmarker.get_report())
+                        self.reset()
+                        self.state = 'calibration'
+
+                # Update the UI once the internal state has been set (will do nothing if visualize is None)
+                self.update_ui()
+                # Sleep the loop as needed to sync to the desired FPS
+                self.sync_to_fps()
+        except:
+            print("--------- Respiratory detector could not find Region of interest ---------")
+            print("--------------- Readjust the Camera to include you CHEST AREA ------------")
+            print("-------------- Restarting Respiratory detector --------------")
 
         logging.info("Capture closed.")
 
@@ -641,11 +648,13 @@ class RespiratoryMonitor:
 
         return x, y, w, h
 
-import socketio
+
 import time
-sio = socketio.Client()
-def startMeUp(cap1, jwt):
+
+def startMeUp(cap1, jwt, sio1):
     global flag
+    global sio
+    sio = sio1
     global average_me
     global len_me
     global jwt_me
@@ -653,21 +662,15 @@ def startMeUp(cap1, jwt):
     average_me = 0
     len_me = 0
     flag = 0
-    trigger = IntervalTrigger(minutes=1)
+    trigger = IntervalTrigger(seconds=63)
     job = sched.add_job(myfunc, trigger)
     sched.start()
-    sio.connect('http://deloitte-hack.herokuapp.com/')
     print("starting program")
     while(1):
-        if(flag):
-            rm = RespiratoryMonitor(cap=cap1, sio=sio, jwt=jwt, capture_target=0, motion_extraction_method="flow")
-            rm.run()
+        rm = RespiratoryMonitor(cap=cap1, jwt=jwt, capture_target=0, motion_extraction_method="flow")
+        rm.run()
 
 
-@sio.event
-def connect():
-    global flag
-    flag = 1
 # from threading import Thread
 # capture_target=0
 # cap1 = cv2.VideoCapture(capture_target)

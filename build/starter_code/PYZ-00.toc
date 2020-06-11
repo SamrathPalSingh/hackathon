@@ -556,6 +556,14 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\__init__.py',
    'PYMODULE'),
+  ('tkinter.messagebox',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\messagebox.py',
+   'PYMODULE'),
+  ('tkinter.commondialog',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\commondialog.py',
+   'PYMODULE'),
   ('tkinter.constants',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\constants.py',
@@ -1028,6 +1036,10 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\py2_warn.py',
    'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
   ('pkg_resources._vendor.pyparsing',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\pyparsing.py',
@@ -1036,49 +1048,45 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\uuid.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging._compat',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging._structures',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.specifiers',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.version',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
-   'PYMODULE'),
   ('pkg_resources._vendor',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
+  ('pkg_resources._vendor.packaging._compat',
    'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.__about__',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.six',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
    'PYMODULE'),
   ('pkg_resources._vendor.appdirs',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\appdirs.py',
    'PYMODULE'),
+  ('pkg_resources._vendor.six',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.version',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.specifiers',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.__about__',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._structures',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
   ('pkg_resources._vendor.packaging.markers',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.packaging',
+  ('pkg_resources._vendor.packaging.requirements',
    'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
    'PYMODULE'),
   ('pkg_resources._vendor.packaging.utils',
    'c:\\users\\best '
@@ -1096,13 +1104,13 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\imp.py',
    'PYMODULE'),
-  ('_py_abc',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\_py_abc.py',
-   'PYMODULE'),
   ('stringprep',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\_py_abc.py',
    'PYMODULE'),
   ('queue',
    'c:\\users\\best '
@@ -1356,45 +1364,53 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
-   'PYMODULE'),
   ('setuptools._vendor.packaging.version',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.specifiers',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.requirements',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._structures',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._compat',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
    'PYMODULE'),
   ('setuptools._vendor.ordered_set',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\ordered_set.py',
    'PYMODULE'),
-  ('setuptools._vendor.pyparsing',
+  ('setuptools._vendor.packaging._structures',
    'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.tags',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\tags.py',
+   'PYMODULE'),
+  ('setuptools._vendor.six',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\six.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.specifiers',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._compat',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.__about__',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
   ('setuptools._vendor',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.six',
+  ('setuptools._vendor.packaging.requirements',
    'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\six.py',
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
+  ('setuptools._vendor.pyparsing',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\pyparsing.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging.utils',
    'c:\\users\\best '
@@ -1403,14 +1419,6 @@
   ('setuptools._vendor.packaging.markers',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.tags',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\tags.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging.__about__',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
   ('setuptools.msvc',
    'c:\\users\\best '
@@ -2196,6 +2204,531 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\scipy\\optimize\\_shgo_lib\\triangulation.py',
    'PYMODULE'),
+  ('matplotlib.pyplot',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\pyplot.py',
+   'PYMODULE'),
+  ('matplotlib.patheffects',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\patheffects.py',
+   'PYMODULE'),
+  ('matplotlib.transforms',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\transforms.py',
+   'PYMODULE'),
+  ('matplotlib.path',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\path.py',
+   'PYMODULE'),
+  ('matplotlib.hatch',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\hatch.py',
+   'PYMODULE'),
+  ('matplotlib.backends',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_template',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_template.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_svg',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_svg.py',
+   'PYMODULE'),
+  ('matplotlib.mathtext',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\mathtext.py',
+   'PYMODULE'),
+  ('matplotlib._mathtext_data',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_mathtext_data.py',
+   'PYMODULE'),
+  ('matplotlib.afm',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\afm.py',
+   'PYMODULE'),
+  ('pyparsing',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\pyparsing.py',
+   'PYMODULE'),
+  ('matplotlib.font_manager',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\font_manager.py',
+   'PYMODULE'),
+  ('matplotlib.fontconfig_pattern',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\fontconfig_pattern.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_mixed',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_mixed.py',
+   'PYMODULE'),
+  ('matplotlib.tight_bbox',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tight_bbox.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_ps',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_ps.py',
+   'PYMODULE'),
+  ('matplotlib.texmanager',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\texmanager.py',
+   'PYMODULE'),
+  ('matplotlib.dviread',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\dviread.py',
+   'PYMODULE'),
+  ('matplotlib._text_layout',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_text_layout.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_pgf',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_pgf.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_pdf',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_pdf.py',
+   'PYMODULE'),
+  ('matplotlib.dates',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\dates.py',
+   'PYMODULE'),
+  ('matplotlib.units',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\units.py',
+   'PYMODULE'),
+  ('dateutil.tz',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\tz\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.tz.tz',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\tz\\tz.py',
+   'PYMODULE'),
+  ('dateutil.zoneinfo',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\zoneinfo\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.parser._parser',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\parser\\_parser.py',
+   'PYMODULE'),
+  ('dateutil.tz.win',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\tz\\win.py',
+   'PYMODULE'),
+  ('dateutil.tz._factories',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\tz\\_factories.py',
+   'PYMODULE'),
+  ('dateutil.tz._common',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\tz\\_common.py',
+   'PYMODULE'),
+  ('six',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\six.py',
+   'PYMODULE'),
+  ('dateutil',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.easter',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\easter.py',
+   'PYMODULE'),
+  ('dateutil._version',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\_version.py',
+   'PYMODULE'),
+  ('dateutil.parser',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\parser\\__init__.py',
+   'PYMODULE'),
+  ('dateutil.parser.isoparser',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\parser\\isoparser.py',
+   'PYMODULE'),
+  ('dateutil.relativedelta',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\relativedelta.py',
+   'PYMODULE'),
+  ('dateutil._common',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\_common.py',
+   'PYMODULE'),
+  ('dateutil.rrule',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\dateutil\\rrule.py',
+   'PYMODULE'),
+  ('fractions',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\fractions.py',
+   'PYMODULE'),
+  ('matplotlib.type1font',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\type1font.py',
+   'PYMODULE'),
+  ('matplotlib.backends._backend_pdf_ps',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\_backend_pdf_ps.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_agg',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_agg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_tkagg',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_tkagg.py',
+   'PYMODULE'),
+  ('matplotlib.backends._backend_tk',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\_backend_tk.py',
+   'PYMODULE'),
+  ('matplotlib.backend_managers',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backend_managers.py',
+   'PYMODULE'),
+  ('matplotlib.backend_tools',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backend_tools.py',
+   'PYMODULE'),
+  ('tkinter.filedialog',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\filedialog.py',
+   'PYMODULE'),
+  ('tkinter.dialog',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\dialog.py',
+   'PYMODULE'),
+  ('tkinter.simpledialog',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\tkinter\\simpledialog.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_qt5agg',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_qt5agg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_compat',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\qt_compat.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_qt5',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_qt5.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor.formsubplottool',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\formsubplottool.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor._formlayout',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\_formlayout.py',
+   'PYMODULE'),
+  ('matplotlib.backends.qt_editor.figureoptions',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\qt_editor\\figureoptions.py',
+   'PYMODULE'),
+  ('matplotlib.markers',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\markers.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_qt4agg',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_qt4agg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_webagg',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_webagg.py',
+   'PYMODULE'),
+  ('matplotlib.backends.backend_webagg_core',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backends\\backend_webagg_core.py',
+   'PYMODULE'),
+  ('matplotlib.ticker',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\ticker.py',
+   'PYMODULE'),
+  ('matplotlib.widgets',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\widgets.py',
+   'PYMODULE'),
+  ('matplotlib.patches',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\patches.py',
+   'PYMODULE'),
+  ('matplotlib.bezier',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\bezier.py',
+   'PYMODULE'),
+  ('matplotlib.text',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\text.py',
+   'PYMODULE'),
+  ('matplotlib.offsetbox',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\offsetbox.py',
+   'PYMODULE'),
+  ('matplotlib.textpath',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\textpath.py',
+   'PYMODULE'),
+  ('matplotlib.lines',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\lines.py',
+   'PYMODULE'),
+  ('matplotlib.colors',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\colors.py',
+   'PYMODULE'),
+  ('matplotlib._color_data',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_color_data.py',
+   'PYMODULE'),
+  ('matplotlib.cm',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\cm.py',
+   'PYMODULE'),
+  ('matplotlib._cm_listed',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_cm_listed.py',
+   'PYMODULE'),
+  ('matplotlib._cm',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_cm.py',
+   'PYMODULE'),
+  ('matplotlib.scale',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\scale.py',
+   'PYMODULE'),
+  ('matplotlib.mlab',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\mlab.py',
+   'PYMODULE'),
+  ('matplotlib.projections',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\projections\\__init__.py',
+   'PYMODULE'),
+  ('mpl_toolkits.mplot3d',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\mpl_toolkits\\mplot3d\\__init__.py',
+   'PYMODULE'),
+  ('mpl_toolkits', '-', 'PYMODULE'),
+  ('mpl_toolkits.mplot3d.axes3d',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\mpl_toolkits\\mplot3d\\axes3d.py',
+   'PYMODULE'),
+  ('matplotlib.tri.triangulation',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\triangulation.py',
+   'PYMODULE'),
+  ('matplotlib.tri',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.tri.triplot',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\triplot.py',
+   'PYMODULE'),
+  ('matplotlib.tri.tripcolor',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\tripcolor.py',
+   'PYMODULE'),
+  ('matplotlib.tri.trirefine',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\trirefine.py',
+   'PYMODULE'),
+  ('matplotlib.tri.triinterpolate',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\triinterpolate.py',
+   'PYMODULE'),
+  ('matplotlib.tri.tritools',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\tritools.py',
+   'PYMODULE'),
+  ('matplotlib.tri.tricontour',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\tricontour.py',
+   'PYMODULE'),
+  ('matplotlib.contour',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\contour.py',
+   'PYMODULE'),
+  ('matplotlib.blocking_input',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\blocking_input.py',
+   'PYMODULE'),
+  ('matplotlib.tri.trifinder',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tri\\trifinder.py',
+   'PYMODULE'),
+  ('matplotlib.collections',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\collections.py',
+   'PYMODULE'),
+  ('mpl_toolkits.mplot3d.axis3d',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\mpl_toolkits\\mplot3d\\axis3d.py',
+   'PYMODULE'),
+  ('matplotlib.axis',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\axis.py',
+   'PYMODULE'),
+  ('mpl_toolkits.mplot3d.art3d',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\mpl_toolkits\\mplot3d\\art3d.py',
+   'PYMODULE'),
+  ('mpl_toolkits.mplot3d.proj3d',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\mpl_toolkits\\mplot3d\\proj3d.py',
+   'PYMODULE'),
+  ('matplotlib.projections.polar',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\projections\\polar.py',
+   'PYMODULE'),
+  ('matplotlib.spines',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\spines.py',
+   'PYMODULE'),
+  ('matplotlib.projections.geo',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\projections\\geo.py',
+   'PYMODULE'),
+  ('matplotlib.axes',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\axes\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.axes._axes',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\axes\\_axes.py',
+   'PYMODULE'),
+  ('matplotlib.container',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\container.py',
+   'PYMODULE'),
+  ('matplotlib.axes._secondary_axes',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\axes\\_secondary_axes.py',
+   'PYMODULE'),
+  ('matplotlib.axes._base',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\axes\\_base.py',
+   'PYMODULE'),
+  ('matplotlib.table',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\table.py',
+   'PYMODULE'),
+  ('matplotlib.streamplot',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\streamplot.py',
+   'PYMODULE'),
+  ('matplotlib.stackplot',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\stackplot.py',
+   'PYMODULE'),
+  ('matplotlib.quiver',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\quiver.py',
+   'PYMODULE'),
+  ('matplotlib.legend',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\legend.py',
+   'PYMODULE'),
+  ('matplotlib.legend_handler',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\legend_handler.py',
+   'PYMODULE'),
+  ('matplotlib.category',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\category.py',
+   'PYMODULE'),
+  ('matplotlib.axes._subplots',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\axes\\_subplots.py',
+   'PYMODULE'),
+  ('matplotlib._layoutbox',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_layoutbox.py',
+   'PYMODULE'),
+  ('matplotlib.artist',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\artist.py',
+   'PYMODULE'),
+  ('matplotlib.gridspec',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\gridspec.py',
+   'PYMODULE'),
+  ('matplotlib.tight_layout',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\tight_layout.py',
+   'PYMODULE'),
+  ('matplotlib.figure',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\figure.py',
+   'PYMODULE'),
+  ('matplotlib._constrained_layout',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_constrained_layout.py',
+   'PYMODULE'),
+  ('matplotlib.backend_bases',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\backend_bases.py',
+   'PYMODULE'),
+  ('matplotlib.docstring',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\docstring.py',
+   'PYMODULE'),
+  ('matplotlib.cbook',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\cbook\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.cbook.deprecation',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\cbook\\deprecation.py',
+   'PYMODULE'),
+  ('matplotlib._pylab_helpers',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_pylab_helpers.py',
+   'PYMODULE'),
+  ('matplotlib.style',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\style\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib.style.core',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\style\\core.py',
+   'PYMODULE'),
+  ('matplotlib.rcsetup',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\rcsetup.py',
+   'PYMODULE'),
+  ('matplotlib.image',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\image.py',
+   'PYMODULE'),
+  ('matplotlib.colorbar',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\colorbar.py',
+   'PYMODULE'),
+  ('cycler',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\cycler.py',
+   'PYMODULE'),
+  ('matplotlib',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\__init__.py',
+   'PYMODULE'),
+  ('matplotlib._version',
+   'c:\\users\\best '
+   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\matplotlib\\_version.py',
+   'PYMODULE'),
   ('scipy.optimize._shgo_lib.sobol_seq',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\scipy\\optimize\\_shgo_lib\\sobol_seq.py',
@@ -2824,10 +3357,6 @@
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\scipy\\ndimage\\fourier.py',
    'PYMODULE'),
-  ('fractions',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\fractions.py',
-   'PYMODULE'),
   ('scipy.stats.mstats_basic',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\scipy\\stats\\mstats_basic.py',
@@ -3079,10 +3608,6 @@
   ('apscheduler.util',
    'c:\\users\\best '
    'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\apscheduler\\util.py',
-   'PYMODULE'),
-  ('six',
-   'c:\\users\\best '
-   'buy\\appdata\\local\\programs\\python\\python38\\lib\\site-packages\\six.py',
    'PYMODULE'),
   ('pytz',
    'c:\\users\\best '
