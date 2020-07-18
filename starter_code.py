@@ -47,7 +47,7 @@ def call(data):
         height = (data['user']['height'])
         sex = (data['user']['sex'])
         values = { 'sex' : sex , 'height' : height, 'weight' : weight, 'age' : age}
-        print(jwt)
+        # print(jwt)
         # sio.disconnect()
 
     else:
@@ -58,6 +58,20 @@ try:
     sio.disconnect()
 except:
     pass
+
+import cv2
+
+cap1 = cv2.VideoCapture(0)
+while(True):
+	ret, frame = cap1.read()
+	cv2.imshow('Press Q after adjusting the camera', frame) 
+	if (cv2.waitKey(1) & 0xFF == ord('q')): 
+		break
+
+# cap1.release() 
+
+cv2.destroyAllWindows() 
+
 print("connected")
 while(flag):
     sio.connect('http://deloitte-hack.herokuapp.com/')
@@ -67,7 +81,7 @@ while(flag):
     sio.sleep(3)
 
 #print("THROUGH")
-cap1 = cv2.VideoCapture(capture_target)
+#cap1 = cv2.VideoCapture(capture_target)
 worker1 = Thread(target=startMeUp, args=(cap1, jwt, sio))
 worker1.setDaemon(True)
 worker1.start()
