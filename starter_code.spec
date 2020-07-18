@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['starter_code.py'],
-             pathex=['C:\\Users\\BEST BUY\\Documents\\capstone\\Heart-rate-measurement-using-camera'],
+             pathex=['D:\\D_Documents\\hackathon'],
              binaries=[],
              datas=[],
              hiddenimports=[],
