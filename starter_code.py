@@ -74,7 +74,7 @@ cv2.destroyAllWindows()
 
 print("connected")
 while(flag):
-    sio.connect('http://deloitte-hack.herokuapp.com/')
+    sio.connect('http://ec2-100-26-9-144.compute-1.amazonaws.com:5000/')
     email = str(input("Email:"))
     password = str(input("Password:"))
     sio.emit('user.login', data={"email":str(email), "password":str(password)}, callback=call)

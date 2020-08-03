@@ -1,4 +1,3 @@
-dlib
 imutils
 matplotlib
 numpy
