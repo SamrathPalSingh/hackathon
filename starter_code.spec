@@ -4,10 +4,10 @@ block_cipher = None
 
 
 a = Analysis(['starter_code.py'],
-             pathex=['D:\\capstone\\testexe\\hackathon'],
+             pathex=['C:\\Users\\samra\\hackathon'],
              binaries=[],
              datas=[],
-             hiddenimports=['pkg_resources.py2_warn'],
+             hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
